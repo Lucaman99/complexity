@@ -1,0 +1,92 @@
+\documentclass[superscriptaddress,pra,nofootinbib,notitlepage, floatfix]{revtex4-1}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{complexity}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{placeins}
+%\newcommand{\ketbra}[2]{\ket{#1}\!\bra{#2}}
+\usepackage{bbold}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{multirow}
+\usetikzlibrary{calc,arrows.meta,positioning, shapes.geometric, arrows, shapes.symbols,shapes.callouts,patterns}
+
+\tikzset{
+    every node/.style={font=\sffamily\small},
+    main node/.style={thick,circle ,draw},
+    visible node/.style={thick,rectangle ,draw}
+}
+%\usepackage[dvipsnames]{xcolor}
+% \usepackage{subfig}
+%\usepackage{subcaption}
+\usepackage{qcircuit}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{amsthm}
+%\usepackage{subcaption}
+\usepackage[caption=false]{subfig}
+\usepackage{latexsym}
+\usepackage{floatrow}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{upgreek}
+\usepackage{textgreek}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+\usepackage{hyperref}
+
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\DeclareMathOperator{\EX}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\declaretheorem[name=Lemma,numberwithin=section]{lm}
+
+\begin{document}
+
+\title{Qubit Complexity Notes}
+
+\date{\today}
+
+\maketitle
+
+\section{Automatic Computation of the Metric Tensor and Christoffel Symbols}
+
+In order to determine the complexity of some unitary $U$, denoted $C[U]$, we must determine the length of the geodesic extending from $I$ to $U$ with respect to some metric on the space of unitaries.
+In general, a metric on the space of unitaries is given by:
+
+\begin{equation}
+  ds^2 = \text{Tr}(i dU U^{\dagger} T_I) \mathcal{I}_{IJ} \text{Tr}(i dU U^{\dagger} T_J)
+\end{equation}
+
+where the $T_I$ are the generators of $SU(2^{N})$, for some $N$-qubit system. Given some parametrized unitary $U(\boldsymbol{\theta})$, we can write this metric explicity in terms of derivatives with respect to the parameters, as
+$dU = \partial_{\boldsymbol{\theta}} U \ d\boldsymbol{\theta}$.
+\newline
+
+The case considered in the paper [CITE] considers a two-qubit system, with a parametrization as follows:
+
+\begin{equation}
+U(\boldsymbol{\theta}) = \exp( -i H(\boldsymbol\theta)) = \exp \left( -i [ \theta_x X + \theta_y Y + \theta_z Z ] \right)
+\end{equation}
+
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+
+\end{document}
