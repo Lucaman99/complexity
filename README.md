@@ -1,2 +1,3 @@
 # complexity
-Studying complexity geometry of quantum systems
+
+A small, lightweight library for studying complexity geometry of quantum systems.
